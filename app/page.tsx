@@ -12,30 +12,30 @@ import { Switch } from '@/components/ui/switch';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Slider } from '@/components/ui/slider';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Terminal, AlertCircle } from 'lucide-react';
+import { TerminalIcon, WarningCircleIcon } from '@phosphor-icons/react';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { useToast } from '@/components/ui/use-toast';
+import { toast } from 'sonner';
 
 export default function Home() {
-  const { toast } = useToast()
-
   return (
-    <main className="min-h-screen p-8 md:p-24 bg-bg font-sans">
+    <main className="min-h-screen p-8 md:p-24 bg-bg font-sans text-text transition-colors duration-300">
       <div className="max-w-5xl mx-auto space-y-12">
 
-        <div className="space-y-4 text-center md:text-left">
-          <h1 className="text-5xl md:text-7xl font-black border-b-4 border-black pb-4 inline-block">
-            NeoBrutal UI
-          </h1>
-          <p className="text-xl md:text-2xl font-medium text-neutral-700">
-            A headless-first neobrutalist component library.
-          </p>
-          <div className="flex gap-4 justify-center md:justify-start">
-            <Badge variant="default">v1.0.0</Badge>
-            <Badge variant="neutral">Open Source</Badge>
-            <Badge variant="outline">MIT License</Badge>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+          <div className="space-y-4 text-center md:text-left">
+            <h1 className="text-5xl md:text-7xl font-black border-b-4 border-border pb-4 inline-block">
+              NeoBrutal UI
+            </h1>
+            <p className="text-xl md:text-2xl font-medium text-neutral-700 dark:text-neutral-300">
+              A headless-first neobrutalist component library.
+            </p>
+            <div className="flex gap-4 justify-center md:justify-start">
+              <Badge variant="default">v1.0.0</Badge>
+              <Badge variant="neutral">Open Source</Badge>
+              <Badge variant="outline">MIT License</Badge>
+            </div>
           </div>
         </div>
 
@@ -143,7 +143,7 @@ export default function Home() {
 
               <div className="space-y-4">
                 <Alert>
-                  <Terminal className="h-4 w-4" />
+                  <TerminalIcon weight="bold" className="h-4 w-4" />
                   <AlertTitle>Heads up!</AlertTitle>
                   <AlertDescription>
                     You can add components to your app using the cli.
@@ -151,7 +151,7 @@ export default function Home() {
                 </Alert>
 
                 <Alert variant="destructive">
-                  <AlertCircle className="h-4 w-4" />
+                  <WarningCircleIcon weight="bold" className="h-4 w-4" />
                   <AlertTitle>Error</AlertTitle>
                   <AlertDescription>
                     Your session has expired. Please log in again.
@@ -180,9 +180,12 @@ export default function Home() {
                   <Button
                     variant="outline"
                     onClick={() => {
-                      toast({
-                        title: "Scheduled: Catch up",
+                      toast("Scheduled: Catch up", {
                         description: "Friday, February 10, 2023 at 5:57 PM",
+                        action: {
+                          label: "Undo",
+                          onClick: () => console.log("Undo"),
+                        },
                       })
                     }}
                   >
@@ -215,8 +218,7 @@ export default function Home() {
                   <AccordionItem value="item-2">
                     <AccordionTrigger>Is it styled?</AccordionTrigger>
                     <AccordionContent>
-                      Yes. It comes with default styles that matches the other
-                      components&apos; aesthetic.
+                      Yes. It comes with default styles that matches the other components&apos; aesthetic.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-3">

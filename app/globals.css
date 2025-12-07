@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -17,51 +15,56 @@
   --color-ring: var(--ring);
   --color-ring-offset: var(--ring-offset);
   --color-secondaryBlack: #212121;
+  --shadow-brutal: 4px 4px 0px 0px var(--border);
 }
 
 :root {
+  color-scheme: light dark;
   --main: #88aaee;
   --overlay: rgba(0, 0, 0, 0.8);
-  --bg: #dfe5f2;
-  --bw: #fff;
-  --blank: #fff;
-  --text: #000;
-  --mtext: #000;
-  --border: #000;
-  --ring: #000;
-  --ring-offset: #fff;
+  --bg: #f4f4f5;
+  --bw: #ffffff;
+  --blank: #ffffff;
+  --text: #09090b;
+  --mtext: #09090b;
+  --border: #000000;
+  --ring: #000000;
+  --ring-offset: #ffffff;
 
   --radius: 5px;
-
   --background: var(--bg);
   --foreground: var(--text);
   --primary: var(--main);
   --primary-foreground: var(--text);
   --secondary: var(--bw);
   --secondary-foreground: var(--text);
-  --muted: #eee;
-  --muted-foreground: #737373;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
   --accent: var(--main);
   --accent-foreground: var(--text);
-  --destructive: #ff6b6b;
-  --destructive-foreground: #000;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
   --input: var(--bw);
   --popover: var(--bw);
   --popover-foreground: var(--text);
   --card: var(--bw);
   --card-foreground: var(--text);
 }
+
 @media (prefers-color-scheme: dark) {
   :root {
     --main: #88aaee;
-    --bg: #050505;
-    --bw: #212121;
-    --blank: #000;
-    --text: #e6e6e6;
-    --mtext: #e6e6e6;
-    --border: #000;
-    --ring: #e6e6e6;
-    --ring-offset: #000;
+    --bg: #09090b;
+    --bw: #18181b;
+    --blank: #000000;
+    --text: #f8fafc;
+    --mtext: #f8fafc;
+    --border: #e2e8f0;
+    --ring: #e2e8f0;
+    --ring-offset: #09090b;
+    --overlay: rgba(0, 0, 0, 0.8);
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
   }
 }
 
@@ -74,5 +77,8 @@ body {
 @layer utilities {
   .focus-brutal {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+  .shadow-brutal {
+    box-shadow: var(--shadow-brutal);
   }
 }
