@@ -11,9 +11,8 @@ const sidebarItems = [
     {
         title: "Getting Started",
         items: [
-            { title: "Introduction", href: "/docs" },
-            { title: "Installation", href: "/docs/installation" },
-            // { title: "Theming", href: "/docs/theming" },
+            { title: "About", href: "/docs" },
+            { title: "Quick Start", href: "/docs/installation" },
         ],
     },
     {

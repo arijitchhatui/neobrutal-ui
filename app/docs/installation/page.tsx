@@ -1,199 +1,150 @@
 "use client"
 
 import { CodeBlock } from "@/components/docs/code-block"
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import Link from "next/link"
 
-export default function InstallationPage() {
+export default function QuickStartPage() {
     return (
-        <div className="space-y-8">
+        <div className="space-y-10">
             <div className="space-y-4">
-                <h1 className="text-4xl font-black">Installation</h1>
+                <h1 className="text-4xl font-black">Quick Start</h1>
                 <p className="text-xl text-neutral-600">
-                    Choose your installation method: full React components or pure HTML/Tailwind.
+                    Get up and running with NeoBrutal UI in your project.
                 </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Card className="border-2 border-black">
-                    <CardHeader>
-                        <CardTitle className="text-lg">React Components</CardTitle>
-                    </CardHeader>
-                    <CardContent className="text-sm space-y-2">
-                        <p>Full-featured components with:</p>
-                        <ul className="list-disc list-inside space-y-1">
-                            <li>Radix UI for accessibility</li>
-                            <li>TypeScript support</li>
-                            <li>Variants and props</li>
-                        </ul>
-                    </CardContent>
-                </Card>
-                <Card className="border-2 border-black">
-                    <CardHeader>
-                        <CardTitle className="text-lg">HTML / Tailwind</CardTitle>
-                    </CardHeader>
-                    <CardContent className="text-sm space-y-2">
-                        <p>Zero-dependency HTML with:</p>
-                        <ul className="list-disc list-inside space-y-1">
-                            <li>Pure Tailwind classes</li>
-                            <li>No JavaScript required*</li>
-                            <li>Copy and paste ready</li>
-                        </ul>
-                        <p className="text-xs text-neutral-500">*Some components use native HTML features like details/summary</p>
-                    </CardContent>
-                </Card>
             </div>
 
             <div className="space-y-4">
-                <h2 className="text-2xl font-bold border-b-2 border-black pb-2">Option 1: React Components</h2>
+                <p>
+                    NeoBrutal UI components can be added to your project in two ways.
+                    Use the CLI to install components with their dependencies automatically,
+                    or copy the code directly and set things up manually.
+                </p>
+            </div>
+
+            {/* CLI Installation */}
+            <div className="space-y-6">
+                <h2 className="text-2xl font-bold border-b-2 border-black pb-2">Using the CLI</h2>
                 <p className="text-neutral-600">
-                    For Next.js / React projects with full functionality.
+                    The recommended way to add components. The CLI handles dependencies and file placement for you.
                 </p>
 
-                <div className="space-y-6">
-                    <div className="space-y-2">
-                        <h3 className="text-lg font-bold">1. Prerequisites</h3>
-                        <Card>
-                            <CardContent className="pt-6">
-                                <ul className="list-disc list-inside space-y-1 text-sm">
-                                    <li><strong>Next.js 16+</strong> with App Router (or React 19+)</li>
-                                    <li><strong>Tailwind CSS v4</strong></li>
-                                    <li><strong>TypeScript</strong> (recommended)</li>
-                                </ul>
-                            </CardContent>
-                        </Card>
-                    </div>
+                <div className="space-y-4">
+                    <h3 className="text-lg font-bold">Initialize your project</h3>
+                    <p className="text-sm text-neutral-600">
+                        Run the init command to set up your project. This installs dependencies and configures your project.
+                    </p>
+                    <CodeBlock code={`npx neobrutal-ui init`} language="bash" />
+                </div>
 
-                    <div className="space-y-2">
-                        <h3 className="text-lg font-bold">2. Install Core Dependencies</h3>
-                        <CodeBlock code={`npm install class-variance-authority clsx tailwind-merge @phosphor-icons/react`} language="bash" />
-                    </div>
+                <div className="space-y-4">
+                    <h3 className="text-lg font-bold">Add components</h3>
+                    <p className="text-sm text-neutral-600">
+                        Add the components you need. They will be placed in your <code className="bg-neutral-200 px-1.5 py-0.5 rounded text-sm">components/ui</code> folder.
+                    </p>
+                    <CodeBlock code={`npx neobrutal-ui add button`} language="bash" />
+                    <p className="text-sm text-neutral-600">
+                        You can add multiple components at once:
+                    </p>
+                    <CodeBlock code={`npx neobrutal-ui add button card input`} language="bash" />
+                </div>
 
-                    <div className="space-y-2">
-                        <h3 className="text-lg font-bold">3. Add the cn() Utility</h3>
-                        <p className="text-neutral-600 text-sm mb-2">
-                            Create <code className="bg-neutral-200 px-1 py-0.5 rounded">lib/utils.ts</code>:
-                        </p>
-                        <CodeBlock code={`import { clsx, type ClassValue } from "clsx"
+                <div className="space-y-4">
+                    <h3 className="text-lg font-bold">Use the component</h3>
+                    <CodeBlock code={`import { Button } from "@/components/ui/button"
+
+export default function Page() {
+  return <Button>Click me</Button>
+}`} />
+                </div>
+            </div>
+
+            {/* Manual Installation */}
+            <div className="space-y-6">
+                <h2 className="text-2xl font-bold border-b-2 border-black pb-2">Manual Installation</h2>
+                <p className="text-neutral-600">
+                    Prefer to copy code directly? Each component page shows the full source code.
+                    Copy it into your project and install any required dependencies.
+                </p>
+
+                <div className="space-y-4">
+                    <h3 className="text-lg font-bold">Install base dependencies</h3>
+                    <p className="text-sm text-neutral-600">
+                        These utilities are used by all components:
+                    </p>
+                    <CodeBlock code={`npm install class-variance-authority clsx tailwind-merge`} language="bash" />
+                </div>
+
+                <div className="space-y-4">
+                    <h3 className="text-lg font-bold">Add the cn utility</h3>
+                    <p className="text-sm text-neutral-600">
+                        Create <code className="bg-neutral-200 px-1.5 py-0.5 rounded text-sm">lib/utils.ts</code>:
+                    </p>
+                    <CodeBlock code={`import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }`} />
-                    </div>
+                </div>
 
-                    <div className="space-y-2">
-                        <h3 className="text-lg font-bold">4. Copy Components</h3>
-                        <p className="text-neutral-600 text-sm mb-2">
-                            Browse the components, copy the source code into <code className="bg-neutral-200 px-1 py-0.5 rounded">components/ui/</code>.
-                        </p>
-                        <p className="text-neutral-600 text-sm">
-                            Some components require additional Radix UI packages. Check each component&apos;s docs for specific dependencies.
-                        </p>
-                    </div>
+                <div className="space-y-4">
+                    <h3 className="text-lg font-bold">Copy the component</h3>
+                    <p className="text-sm text-neutral-600">
+                        Browse the component you need, copy the React code from the Code tab,
+                        and paste it into <code className="bg-neutral-200 px-1.5 py-0.5 rounded text-sm">components/ui/</code>.
+                    </p>
+                    <p className="text-sm text-neutral-600">
+                        Some components require Radix UI primitives. Install them as needed:
+                    </p>
+                    <CodeBlock code={`npm install @radix-ui/react-accordion`} language="bash" />
                 </div>
             </div>
 
-            <div className="space-y-4">
-                <h2 className="text-2xl font-bold border-b-2 border-black pb-2">Option 2: HTML / Tailwind Only</h2>
+            {/* Copy as HTML */}
+            <div className="space-y-6">
+                <h2 className="text-2xl font-bold border-b-2 border-black pb-2">Copy as HTML</h2>
                 <p className="text-neutral-600">
-                    For quick prototypes, non-React projects, or when you want zero dependencies.
+                    Need just the markup without React? Every component has an HTML tab with plain Tailwind classes.
+                    Copy it into any project — React, Vue, plain HTML, or anything else.
                 </p>
 
-                <div className="space-y-6">
-                    <div className="space-y-2">
-                        <h3 className="text-lg font-bold">1. Prerequisites</h3>
-                        <Card>
-                            <CardContent className="pt-6">
-                                <ul className="list-disc list-inside space-y-1 text-sm">
-                                    <li><strong>Tailwind CSS v4</strong> installed and configured</li>
-                                    <li>That&apos;s it!</li>
-                                </ul>
-                            </CardContent>
-                        </Card>
-                    </div>
+                <div className="space-y-4">
+                    <h3 className="text-lg font-bold">Requirements</h3>
+                    <ul className="text-sm text-neutral-600 space-y-1">
+                        <li>
+                            <Link href="https://tailwindcss.com/docs/installation" target="_blank" className="underline hover:no-underline">Tailwind CSS v4</Link> installed and configured
+                        </li>
+                        <li>
+                            For icons, use the inline SVGs provided or install <Link href="https://phosphoricons.com" target="_blank" className="underline hover:no-underline">Phosphor Icons</Link>
+                        </li>
+                    </ul>
+                </div>
 
-                    <div className="space-y-2">
-                        <h3 className="text-lg font-bold">2. Copy HTML Code</h3>
-                        <p className="text-neutral-600 text-sm mb-2">
-                            On each component page, click the <strong>Code</strong> tab, then select <strong>HTML</strong> to see the pure Tailwind version.
-                        </p>
-                        <p className="text-neutral-600 text-sm">
-                            Copy and paste directly into your HTML files. Colors are hardcoded (e.g., <code className="bg-neutral-200 px-1 py-0.5 rounded">#88aaee</code> for the primary color).
-                        </p>
-                    </div>
-
-                    <div className="space-y-2">
-                        <h3 className="text-lg font-bold">3. Icons</h3>
-                        <p className="text-neutral-600 text-sm mb-2">
-                            HTML snippets include inline SVGs from <a href="https://phosphoricons.com" target="_blank" className="font-bold underline hover:no-underline">Phosphor Icons</a>. You can:
-                        </p>
-                        <ul className="list-disc list-inside space-y-1 text-sm text-neutral-600">
-                            <li>Use the inline SVGs as-is</li>
-                            <li>Replace with your own icon library</li>
-                            <li>Install Phosphor: <code className="bg-neutral-200 px-1 py-0.5 rounded">npm install @phosphor-icons/react</code></li>
-                        </ul>
-                    </div>
+                <div className="space-y-4">
+                    <h3 className="text-lg font-bold">How to use</h3>
+                    <ol className="text-sm text-neutral-600 space-y-2 list-decimal list-inside">
+                        <li>Go to any component page</li>
+                        <li>Click the <span className="font-bold">Code</span> tab</li>
+                        <li>Select <span className="font-bold">HTML</span> to see the Tailwind-only version</li>
+                        <li>Copy and paste into your project</li>
+                    </ol>
                 </div>
             </div>
 
-            <div className="space-y-4">
-                <h2 className="text-2xl font-bold border-b-2 border-black pb-2">Color Reference</h2>
-                <p className="text-neutral-600 text-sm mb-4">
-                    These are the hardcoded color values used in HTML snippets:
-                </p>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded border-2 border-black bg-[#88aaee]"></div>
-                        <div>
-                            <p className="font-bold text-sm">Primary</p>
-                            <p className="text-xs text-neutral-500">#88aaee</p>
-                        </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded border-2 border-black bg-[#dfe5f2]"></div>
-                        <div>
-                            <p className="font-bold text-sm">Background</p>
-                            <p className="text-xs text-neutral-500">#dfe5f2</p>
-                        </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded border-2 border-black bg-[#97ee88]"></div>
-                        <div>
-                            <p className="font-bold text-sm">Success</p>
-                            <p className="text-xs text-neutral-500">#97ee88</p>
-                        </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded border-2 border-black bg-[#ee8888]"></div>
-                        <div>
-                            <p className="font-bold text-sm">Error</p>
-                            <p className="text-xs text-neutral-500">#ee8888</p>
-                        </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded border-2 border-black bg-[#eeeb88]"></div>
-                        <div>
-                            <p className="font-bold text-sm">Warning</p>
-                            <p className="text-xs text-neutral-500">#eeeb88</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            {/* Next Steps */}
             <div className="space-y-4">
                 <h2 className="text-2xl font-bold border-b-2 border-black pb-2">Next Steps</h2>
-                <div className="flex flex-col sm:flex-row gap-4">
-                    <Link href="/docs/components/button" className="flex-1">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <Link href="/docs/components/accordion" className="block">
                         <div className="p-4 border-2 border-black rounded-base hover:bg-main transition-colors">
-                            <h3 className="font-bold">Start with Button</h3>
-                            <p className="text-sm text-neutral-600">The most common component</p>
+                            <h3 className="font-bold">Browse Components</h3>
+                            <p className="text-sm text-neutral-600">See all available components</p>
                         </div>
                     </Link>
-                    <Link href="/docs/theming" className="flex-1">
+                    <Link href="https://github.com/bridgetamana/neobrutal-ui" target="_blank" className="block">
                         <div className="p-4 border-2 border-black rounded-base hover:bg-main transition-colors">
-                            <h3 className="font-bold">Learn Theming</h3>
-                            <p className="text-sm text-neutral-600">Customize colors and styles</p>
+                            <h3 className="font-bold">View on GitHub</h3>
+                            <p className="text-sm text-neutral-600">Star the repo, report issues</p>
                         </div>
                     </Link>
                 </div>

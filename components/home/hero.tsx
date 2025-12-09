@@ -45,9 +45,9 @@ export function HeroSection() {
                     The component library that refuses to be boring.
                     Accessible, customizable, and unapologetically bold.
                 </p>
-                <Link href="/docs/components">
+                <Link href="/docs/installation">
                     <Button className="h-14 px-8 text-lg font-bold shadow-brutal hover:bg-main">
-                        Start Building <ArrowRightIcon weight="bold" className="ml-2 h-5 w-5" />
+                        Quick Start <ArrowRightIcon weight="bold" className="ml-2 h-5 w-5" />
                     </Button>
                 </Link>
             </div>
