@@ -1,6 +1,6 @@
 # NeoBrutal UI
 
-A collection of Neobrutalist components built with Radix UI and Tailwind CSS. 
+A collection of Neobrutalist components built with Radix UI and Tailwind CSS.
 
 ## Documentation
 
@@ -9,6 +9,7 @@ Visit [neobrutal-ui.vercel.app/docs](https://neobrutal-ui.vercel.app/docs) to vi
 ## Quick Start
 
 ```bash
+npx neobrutal-ui init
 npx neobrutal-ui add button
 ```
 
@@ -21,11 +22,28 @@ Or copy the code directly from the docs.
 - Avatar
 - Badge
 - Button
+- Card
+- Checkbox
+- Dialog
+- Input
+- Label
+- Pagination
+- Popover
+- Progress
+- Radio Group
+- Select
+- Skeleton
+- Slider
+- Switch
+- Tabs
+- Textarea
+- Toast
+- Tooltip
 
 ## Contributing
 
-Contributions are welcome. Please open an issue first to discuss what you would like to change.
+We welcome contributions. Please read our [Contributing Guide](CONTRIBUTING.md) before submitting a Pull Request.
 
 ## License
 
-This project is licensed under the terms of the [MIT License](/license.md)
+This project is licensed under the terms of the [MIT License](license.md).
