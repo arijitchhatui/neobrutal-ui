@@ -8,42 +8,47 @@ import { CodeBlock } from "@/components/docs/code-block"
 const radioGroupCode = `"use client"
 
 import * as React from "react"
-import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
+import { Radio } from "@base-ui/react/radio"
+import { RadioGroup as BaseRadioGroup } from "@base-ui/react/radio-group"
 import { CircleIcon } from "@phosphor-icons/react"
 import { cn } from "@/lib/utils"
 
+type RadioGroupProps = React.ComponentPropsWithoutRef<typeof BaseRadioGroup>
+
 const RadioGroup = React.forwardRef<
-    React.ComponentRef<typeof RadioGroupPrimitive.Root>,
-    React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>
+    React.ComponentRef<typeof BaseRadioGroup>,
+    RadioGroupProps
 >(({ className, ...props }, ref) => (
-    <RadioGroupPrimitive.Root
+    <BaseRadioGroup
         className={cn("grid gap-2", className)}
         {...props}
         ref={ref}
     />
 ))
-RadioGroup.displayName = RadioGroupPrimitive.Root.displayName
+RadioGroup.displayName = "RadioGroup"
+
+type RadioGroupItemProps = React.ComponentPropsWithoutRef<typeof Radio.Root>
 
 const RadioGroupItem = React.forwardRef<
-    React.ComponentRef<typeof RadioGroupPrimitive.Item>,
-    React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>
+    React.ComponentRef<typeof Radio.Root>,
+    RadioGroupItemProps
 >(({ className, ...props }, ref) => {
     return (
-        <RadioGroupPrimitive.Item
+        <Radio.Root
             ref={ref}
             className={cn(
-                "aspect-square h-5 w-5 rounded-full border-2 border-border text-text ring-offset-white focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-main",
+                "aspect-square h-5 w-5 rounded-full border-2 border-border text-text ring-offset-white focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-checked:bg-main",
                 className
             )}
             {...props}
         >
-            <RadioGroupPrimitive.Indicator className="flex items-center justify-center">
+            <Radio.Indicator className="flex items-center justify-center data-unchecked:hidden">
                 <CircleIcon weight="fill" className="h-2.5 w-2.5 fill-current text-current" />
-            </RadioGroupPrimitive.Indicator>
-        </RadioGroupPrimitive.Item>
+            </Radio.Indicator>
+        </Radio.Root>
     )
 })
-RadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName
+RadioGroupItem.displayName = "RadioGroupItem"
 
 export { RadioGroup, RadioGroupItem }`
 
@@ -82,7 +87,7 @@ export default function RadioGroupPage() {
                 <ul className="list-disc list-inside space-y-2 text-black">
                     <li><strong>Mutual exclusion:</strong> Only one option selected at a time</li>
                     <li><strong>Circular shape:</strong> Classic radio button look</li>
-                    <li><strong>Radix UI:</strong> Built on accessible primitives</li>
+                    <li><strong>Base UI:</strong> Built on accessible primitives</li>
                     <li><strong>Group layout:</strong> Default gap-2 spacing between options</li>
                     <li><strong>Inner indicator:</strong> Filled circle when selected</li>
                 </ul>
@@ -109,7 +114,7 @@ export default function RadioGroupPage() {
             <div className="space-y-4">
                 <h2 className="text-2xl font-bold border-b-2 border-border pb-2">Accessibility</h2>
                 <ul className="list-disc list-inside space-y-2 text-black">
-                    <li><strong>WAI-ARIA compliant:</strong> Full Radix UI accessibility support</li>
+                    <li><strong>WAI-ARIA compliant:</strong> Full Base UI accessibility support</li>
                     <li><strong>Keyboard navigation:</strong> Arrow keys move between options, Space/Enter to select</li>
                     <li><strong>Labels:</strong> Always pair items with &lt;Label&gt; using htmlFor</li>
                     <li><strong>Focus ring:</strong> Clear visual indicator for keyboard navigation</li>

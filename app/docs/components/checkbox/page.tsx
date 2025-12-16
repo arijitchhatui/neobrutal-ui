@@ -8,30 +8,32 @@ import { CodeBlock } from "@/components/docs/code-block"
 const checkboxCode = `"use client"
 
 import * as React from "react"
-import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
+import { Checkbox as BaseCheckbox } from "@base-ui/react/checkbox"
 import { CheckIcon } from "@phosphor-icons/react"
 import { cn } from "@/lib/utils"
 
+type CheckboxProps = React.ComponentPropsWithoutRef<typeof BaseCheckbox.Root>
+
 const Checkbox = React.forwardRef<
-    React.ComponentRef<typeof CheckboxPrimitive.Root>,
-    React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
+    React.ComponentRef<typeof BaseCheckbox.Root>,
+    CheckboxProps
 >(({ className, ...props }, ref) => (
-    <CheckboxPrimitive.Root
+    <BaseCheckbox.Root
         ref={ref}
         className={cn(
-            "peer h-5 w-5 shrink-0 rounded-base border-2 border-border ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-main data-[state=checked]:text-black",
+            "peer h-5 w-5 shrink-0 rounded-base border-2 border-border ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-checked:bg-main data-checked:text-black",
             className
         )}
         {...props}
     >
-        <CheckboxPrimitive.Indicator
-            className={cn("flex items-center justify-center text-current")}
+        <BaseCheckbox.Indicator
+            className={cn("flex items-center justify-center text-current data-unchecked:hidden")}
         >
             <CheckIcon weight="bold" className="h-3.5 w-3.5" />
-        </CheckboxPrimitive.Indicator>
-    </CheckboxPrimitive.Root>
+        </BaseCheckbox.Indicator>
+    </BaseCheckbox.Root>
 ))
-Checkbox.displayName = CheckboxPrimitive.Root.displayName
+Checkbox.displayName = "Checkbox"
 
 export { Checkbox }`
 
@@ -69,7 +71,7 @@ export default function CheckboxPage() {
                 <h2 className="text-2xl font-bold border-b-2 border-border pb-2">Features</h2>
                 <ul className="list-disc list-inside space-y-2 text-black">
                     <li><strong>Bold Styling:</strong> 2px border with hard edges for Neobrutalist look</li>
-                    <li><strong>Radix UI:</strong> Built on accessible primitives (WAI-ARIA compliant)</li>
+                    <li><strong>Base UI:</strong> Built on accessible primitives (WAI-ARIA compliant)</li>
                     <li><strong>Icon:</strong> Uses Phosphor CheckIcon for visual feedback</li>
                     <li><strong>States:</strong> Supports checked, unchecked, and disabled states</li>
                     <li><strong>Square Shape:</strong> Classic checkbox aesthetic (not rounded)</li>
@@ -97,7 +99,7 @@ export default function CheckboxPage() {
             <div className="space-y-4">
                 <h2 className="text-2xl font-bold border-b-2 border-border pb-2">Accessibility</h2>
                 <ul className="list-disc list-inside space-y-2 text-black">
-                    <li><strong>Built on Radix UI:</strong> Full WAI-ARIA compliance</li>
+                    <li><strong>Built on Base UI:</strong> Full WAI-ARIA compliance</li>
                     <li><strong>Keyboard support:</strong> Space key to toggle, Tab to navigate</li>
                     <li><strong>Labels:</strong> Always pair with &lt;Label&gt; using htmlFor</li>
                     <li><strong>Focus ring:</strong> Clear 2px black ring for keyboard users</li>

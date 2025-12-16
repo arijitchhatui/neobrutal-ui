@@ -142,14 +142,14 @@ export default function SelectPage() {
                     <li><strong>Keyboard navigation:</strong> Arrow keys to move, Enter to select</li>
                     <li><strong>Search/type:</strong> Type to jump to matching options</li>
                     <li><strong>Check indicator:</strong> Shows selected item</li>
-                    <li><strong>Radix UI:</strong> Full WAI-ARIA compliance</li>
+                    <li><strong>Base UI:</strong> Full WAI-ARIA compliance</li>
                 </ul>
             </div>
 
             <div className="space-y-4">
                 <h2 className="text-2xl font-bold border-b-2 border-border pb-2">Components</h2>
                 <ul className="list-disc list-inside space-y-2 text-black">
-                    <li><strong>Select:</strong> Root component (Radix SelectPrimitive.Root)</li>
+                    <li><strong>Select:</strong> Root component (Base UI Select.Root)</li>
                     <li><strong>SelectTrigger:</strong> Button that opens the dropdown</li>
                     <li><strong>SelectValue:</strong> Shows selected value or placeholder</li>
                     <li><strong>SelectContent:</strong> Dropdown menu container</li>
@@ -161,7 +161,7 @@ export default function SelectPage() {
             <div className="space-y-4">
                 <h2 className="text-2xl font-bold border-b-2 border-border pb-2">Accessibility</h2>
                 <ul className="list-disc list-inside space-y-2 text-black">
-                    <li><strong>Full ARIA support:</strong> Built on Radix UI select primitive</li>
+                    <li><strong>Full ARIA support:</strong> Built on Base UI select primitive</li>
                     <li><strong>Keyboard navigation:</strong> Tab, Arrow keys, Enter/Space</li>
                     <li><strong>Screen readers:</strong> Announces selected option and availability</li>
                     <li><strong>Focus management:</strong> Proper focus trap in dropdown</li>

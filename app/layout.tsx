@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     default: "NeoBrutal UI",
     template: "%s | NeoBrutal UI",
   },
-  description: "A collection of Neobrutalist components built with Radix UI and Tailwind CSS.",
+  description: "A collection of Neobrutalist components built with Base UI and Tailwind CSS.",
   keywords: ["react", "next.js", "tailwindcss", "neobrutalism", "component library", "ui kit", "design system"],
   authors: [{ name: "Bridget", url: "https://github.com/bridgetamana" }],
   creator: "Bridget",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://neobrutal-ui.vercel.app",
     title: "NeoBrutal UI",
-    description: "A collection of Neobrutalist components built with Radix UI and Tailwind CSS.",
+    description: "A collection of Neobrutalist components built with Base UI and Tailwind CSS.",
     siteName: "NeoBrutal UI",
     // images: [
     //   {
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "NeoBrutal UI",
-    description: "A collection of Neobrutalist components built with Radix UI and Tailwind CSS.",
+    description: "A collection of Neobrutalist components built with Base UI and Tailwind CSS.",
     // images: ["/og-image.png"],
     creator: "@bridgetamana",
   },

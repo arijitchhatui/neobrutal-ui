@@ -39,7 +39,7 @@ export function HeroSection() {
                     Components
                 </h1>
                 <p className="text-lg md:text-xl font-medium max-w-2xl mx-auto mb-6 text-black">
-                    A collection of Neobrutalist components built with Radix UI and Tailwind CSS.
+                    A collection of Neobrutalist components built with Base UI and Tailwind CSS.
                 </p>
                 <Link href="/docs/installation">
                     <Button className="h-14 px-8 text-lg font-bold shadow-brutal hover:bg-main">

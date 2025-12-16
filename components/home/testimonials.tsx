@@ -17,7 +17,7 @@ export function TestimonialsSection() {
                         </Avatar>
                         <div className="bg-pastel-purple p-6 rounded-4xl rounded-tl-none border-2 border-black shadow-brutal relative max-w-lg">
                             <p className="text-lg">
-                                &quot;This library is exactly what I needed. It&apos;s like Tailwind and Radix had a baby, and that baby was raised by 90s MTV.&quot;
+                                &quot;This library is exactly what I needed. It&apos;s like Tailwind and Base UI had a baby, and that baby was raised by 90s MTV.&quot;
                             </p>
                             <div className="mt-2 font-bold text-sm opacity-75">
                                 — @shadcn

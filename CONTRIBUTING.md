@@ -99,10 +99,10 @@ Feature requests are welcome. Please:
 
 ## Adding a New Component
 
-1. Install any required Radix UI primitive:
+1. Install Base UI if not already installed:
 
    ```bash
-   npm install @radix-ui/react-component-name
+   npm install @base-ui/react
    ```
 
 2. Create the component file at `components/ui/component-name.tsx`.

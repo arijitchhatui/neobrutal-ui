@@ -12,7 +12,7 @@ export default function DocsPage() {
 
             <section className="space-y-4">
                 <p className="text-base text-black leading-relaxed">
-                    NeoBrutal UI bridges the gap between raw Neobrutalist aesthetics and structured accessibility. Each component is built on Radix UI primitives, ensuring proper keyboard navigation, focus management, and ARIA support out of the box.
+                    NeoBrutal UI bridges the gap between raw Neobrutalist aesthetics and structured accessibility. Each component is built on Base UI primitives, ensuring proper keyboard navigation, focus management, and ARIA support out of the box.
                 </p>
                 <p className="text-base text-black leading-relaxed">
                     Components are distributed via CLI or direct copy-paste. There is no npm package to install. You own the code, customize it freely, and never worry about breaking changes from upstream updates.
@@ -32,7 +32,7 @@ export default function DocsPage() {
                         <div className="p-6">
                             <span className="text-2xl font-bold text-black">Accessible</span>
                             <p className="text-base text-black mt-2">
-                                Built on Radix UI with keyboard navigation and screen reader support.
+                                Built on Base UI with keyboard navigation and screen reader support.
                             </p>
                         </div>
                     </div>
@@ -98,7 +98,7 @@ export default function DocsPage() {
                 </p>
                 <ul className="space-y-2 text-base text-black">
                     <li>
-                        <Link href="https://www.radix-ui.com" target="_blank" className="font-bold underline underline-offset-4">Radix UI</Link>
+                        <Link href="https://base-ui.com" target="_blank" className="font-bold underline underline-offset-4">Base UI</Link>
                     </li>
                     <li>
                         <Link href="https://tailwindcss.com" target="_blank" className="font-bold underline underline-offset-4">Tailwind CSS</Link>

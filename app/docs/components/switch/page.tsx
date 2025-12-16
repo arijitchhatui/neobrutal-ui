@@ -8,29 +8,31 @@ import { CodeBlock } from "@/components/docs/code-block"
 const switchCode = `"use client"
 
 import * as React from "react"
-import * as SwitchPrimitive from "@radix-ui/react-switch"
+import { Switch as BaseSwitch } from "@base-ui/react/switch"
 import { cn } from "@/lib/utils"
 
+type SwitchProps = React.ComponentPropsWithoutRef<typeof BaseSwitch.Root>
+
 const Switch = React.forwardRef<
-    React.ComponentRef<typeof SwitchPrimitive.Root>,
-    React.ComponentPropsWithoutRef<typeof SwitchPrimitive.Root>
+    React.ComponentRef<typeof BaseSwitch.Root>,
+    SwitchProps
 >(({ className, ...props }, ref) => (
-    <SwitchPrimitive.Root
+    <BaseSwitch.Root
         className={cn(
-            "peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-main data-[state=unchecked]:bg-bw",
+            "peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:opacity-50 data-checked:bg-main data-unchecked:bg-bw",
             className
         )}
         {...props}
         ref={ref}
     >
-        <SwitchPrimitive.Thumb
+        <BaseSwitch.Thumb
             className={cn(
-                "pointer-events-none block h-4 w-4 rounded-full border-2 border-border bg-white shadow-none ring-0 transition-transform data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0.5"
+                "pointer-events-none block h-4 w-4 rounded-full border-2 border-border bg-white shadow-none ring-0 transition-transform data-checked:translate-x-5 data-unchecked:translate-x-0.5"
             )}
         />
-    </SwitchPrimitive.Root>
+    </BaseSwitch.Root>
 ))
-Switch.displayName = SwitchPrimitive.Root.displayName
+Switch.displayName = "Switch"
 
 export { Switch }`
 
@@ -70,7 +72,7 @@ export default function SwitchPage() {
                     <li><strong>Smooth animation:</strong> Sliding thumb with transition</li>
                     <li><strong>Clear states:</strong> Color change indicates on/off</li>
                     <li><strong>Border design:</strong> 2px borders on both track and thumb</li>
-                    <li><strong>Radix UI:</strong> Built on accessible switch primitive</li>
+                    <li><strong>Base UI:</strong> Built on accessible switch primitive</li>
                     <li><strong>Circular thumb:</strong> Smooth, easy-to-identify toggle</li>
                 </ul>
             </div>
@@ -96,7 +98,7 @@ export default function SwitchPage() {
             <div className="space-y-4">
                 <h2 className="text-2xl font-bold border-b-2 border-border pb-2">Accessibility</h2>
                 <ul className="list-disc list-inside space-y-2 text-black">
-                    <li><strong>WAI-ARIA:</strong> Full Radix UI accessibility compliance</li>
+                    <li><strong>WAI-ARIA:</strong> Full Base UI accessibility compliance</li>
                     <li><strong>Keyboard support:</strong> Space/Enter to toggle, Tab to navigate</li>
                     <li><strong>Labels:</strong> Always pair with &lt;Label&gt; using htmlFor</li>
                     <li><strong>Focus ring:</strong> Clear 2px black ring for keyboard users</li>

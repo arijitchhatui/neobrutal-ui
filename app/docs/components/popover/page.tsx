@@ -97,7 +97,7 @@ export default function PopoverPage() {
                 <h2 className="text-2xl font-bold">Accessibility</h2>
                 <ul className="space-y-2 list-disc list-inside font-bold">
                     <li>Follows WAI-ARIA Popover pattern</li>
-                    <li>Focus management handled by Radix UI</li>
+                    <li>Focus management handled by Base UI</li>
                     <li>Keyboard navigation support (Esc to close)</li>
                     <li>Screen reader announcements</li>
                 </ul>

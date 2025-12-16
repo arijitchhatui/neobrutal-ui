@@ -1,6 +1,6 @@
 # NeoBrutal UI
 
-A collection of Neobrutalist components built with Radix UI and Tailwind CSS.
+A collection of Neobrutalist components built with Base UI and Tailwind CSS.
 
 ## Documentation
 

@@ -46,7 +46,6 @@
     "type": "registry:ui",
     "description": "Displays a button or a component that looks like a button with neobrutalist styling.",
     "dependencies": [
-      "@radix-ui/react-slot",
       "class-variance-authority"
     ],
     "registryDependencies": []

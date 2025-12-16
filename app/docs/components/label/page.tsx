@@ -9,7 +9,6 @@ import { CodeBlock } from "@/components/docs/code-block"
 const labelCode = `"use client"
 
 import * as React from "react"
-import * as LabelPrimitive from "@radix-ui/react-label"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
@@ -17,18 +16,19 @@ const labelVariants = cva(
     "text-sm font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
 )
 
-const Label = React.forwardRef<
-    React.ComponentRef<typeof LabelPrimitive.Root>,
-    React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &
+type LabelProps = React.LabelHTMLAttributes<HTMLLabelElement> &
     VariantProps<typeof labelVariants>
->(({ className, ...props }, ref) => (
-    <LabelPrimitive.Root
-        ref={ref}
-        className={cn(labelVariants(), className)}
-        {...props}
-    />
-))
-Label.displayName = LabelPrimitive.Root.displayName
+
+const Label = React.forwardRef<HTMLLabelElement, LabelProps>(
+    ({ className, ...props }, ref) => (
+        <label
+            ref={ref}
+            className={cn(labelVariants(), className)}
+            {...props}
+        />
+    )
+)
+Label.displayName = "Label"
 
 export { Label }`
 
@@ -41,7 +41,7 @@ export default function LabelPage() {
 
             <section className="space-y-4">
                 <p className="text-base text-black">
-                    An accessible form label component built on Radix UI. Essential for semantic form markup.
+                    An accessible form label component using native HTML. Essential for semantic form markup.
                 </p>
             </section>
 
@@ -84,7 +84,7 @@ export default function LabelPage() {
             <div className="space-y-4">
                 <h2 className="text-2xl font-bold border-b-2 border-border pb-2">Accessibility Features</h2>
                 <ul className="list-disc list-inside space-y-2 text-black">
-                    <li><strong>Built on Radix:</strong> Full accessibility support out of the box</li>
+                    <li><strong>Native HTML:</strong> Full accessibility support out of the box</li>
                     <li><strong>Semantic HTML:</strong> Uses native &lt;label&gt; element</li>
                     <li><strong>htmlFor attribute:</strong> Connects to form control via id</li>
                     <li><strong>Peer modifiers:</strong> Automatically responds to disabled control state</li>

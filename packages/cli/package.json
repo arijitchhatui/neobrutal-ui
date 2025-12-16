@@ -19,7 +19,7 @@
         "components",
         "react",
         "tailwindcss",
-        "radix-ui",
+        "base-ui",
         "cli"
     ],
     "bin": {

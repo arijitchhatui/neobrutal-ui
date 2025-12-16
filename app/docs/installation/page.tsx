@@ -84,7 +84,7 @@ export function cn(...inputs: ClassValue[]) {
                             <h3 className="text-lg font-bold text-black">Copy the component</h3>
                         </div>
                         <p className="text-base text-black">
-                            Browse to any component page, open the Code tab, and copy the source into <code className="px-1.5 py-0.5 bg-neutral-200 rounded text-base font-mono">components/ui/</code>. Install any required Radix primitives as needed.
+                            Browse to any component page, open the Code tab, and copy the source into <code className="px-1.5 py-0.5 bg-neutral-200 rounded text-base font-mono">components/ui/</code>. Install Base UI if required.
                         </p>
                     </div>
                 </div>
