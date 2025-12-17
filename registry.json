@@ -1,7 +1,7 @@
 {
     "$schema": "https://ui.shadcn.com/schema/registry.json",
     "name": "neobrutal-ui",
-    "homepage": "https://neobrutalism.dev",
+    "homepage": "https://neobrutal-ui-mocha.vercel.app/",
     "items": [
         {
             "name": "accordion",

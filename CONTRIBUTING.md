@@ -21,7 +21,7 @@ By participating in this project, you agree to maintain a respectful and inclusi
 2. Clone your fork locally:
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/neobrutal-ui.git
+   git clone https://github.com/YOUR_USERNAME/Bridgetamana/neobrutal-ui.git
    cd neobrutal-ui
    ```
 
@@ -37,7 +37,7 @@ By participating in this project, you agree to maintain a respectful and inclusi
    npm run dev
    ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+5. Open `http://localhost:3000` in your browser.
 
 ## How to Contribute
 
