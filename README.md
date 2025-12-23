@@ -9,8 +9,8 @@ Visit [neobrutal-ui.vercel.app](https://neobrutal-ui.vercel.app) for comprehensi
 ## Quick Start
 
 ```bash
-npx neobrutal-ui init
-npx neobrutal-ui add button
+npx neobrutal init
+npx neobrutal add button
 ```
 
 Or copy the code directly from the docs.

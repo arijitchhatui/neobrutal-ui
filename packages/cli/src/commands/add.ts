@@ -126,7 +126,7 @@ async function runAdd(options: z.infer<typeof addOptionsSchema>): Promise<void> 
         logger.error(
             `The following components are not available: ${invalidComponents.join(", ")}`
         )
-        logger.info("Run `npx neobrutal-ui list` to see all available components.")
+        logger.info("Run `npx neobrutal list` to see all available components.")
         return
     }
 

@@ -93,7 +93,7 @@ export async function runInit(
     )
     logger.info("You may now add components using:")
     logger.break()
-    logger.log(`  ${highlighter.code("npx neobrutal-ui add button")}`)
+    logger.log(`  ${highlighter.code("npx neobrutal add button")}`)
     logger.break()
 }
 

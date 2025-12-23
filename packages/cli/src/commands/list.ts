@@ -69,7 +69,7 @@ async function runList(): Promise<void> {
 
         logger.info("To add a component, run:")
         logger.break()
-        logger.log(`  ${highlighter.code("npx neobrutal-ui add <component>")}`)
+        logger.log(`  ${highlighter.code("npx neobrutal add <component>")}`)
         logger.break()
     } catch (error) {
         listSpinner.fail("Failed to fetch components.")

@@ -44,7 +44,7 @@ async function runDiff(options: z.infer<typeof diffOptionsSchema>): Promise<void
         logger.error(
             `No ${highlighter.info("components.json")} file found at ${highlighter.info(cwd)}.`
         )
-        logger.info("Run `npx neobrutal-ui init` to initialize the project.")
+        logger.info("Run `npx neobrutal init` to initialize the project.")
         return
     }
 
@@ -85,7 +85,7 @@ async function runDiff(options: z.infer<typeof diffOptionsSchema>): Promise<void
         logger.break()
         logger.info("To update to the latest version, run:")
         logger.break()
-        logger.log(`  ${highlighter.code(`npx neobrutal-ui add ${component} --overwrite`)}`)
+        logger.log(`  ${highlighter.code(`npx neobrutal add ${component} --overwrite`)}`)
         logger.break()
     } catch (error) {
         diffSpinner.fail(`Failed to check ${component}.`)

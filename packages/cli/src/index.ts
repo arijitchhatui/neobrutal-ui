@@ -6,7 +6,7 @@ import { diff } from "./commands/diff.js"
 
 const packageJson = {
     version: "0.1.0",
-    name: "neobrutal-ui",
+    name: "neobrutal",
 }
 
 process.on("SIGINT", () => process.exit(0))
@@ -14,7 +14,7 @@ process.on("SIGTERM", () => process.exit(0))
 
 async function main() {
     const program = new Command()
-        .name("neobrutal-ui")
+        .name("neobrutal")
         .description("Add NeoBrutal UI components to your project")
         .version(
             packageJson.version,
