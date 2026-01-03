@@ -4,7 +4,9 @@
   "type": "registry:ui",
   "description": "A set of layered sections of content displayed one at a time.",
   "dependencies": [],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "components/ui/tabs.tsx",

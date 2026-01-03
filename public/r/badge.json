@@ -6,7 +6,9 @@
   "dependencies": [
     "class-variance-authority"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "components/ui/badge.tsx",

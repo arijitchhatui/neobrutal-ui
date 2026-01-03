@@ -4,7 +4,9 @@
   "type": "registry:ui",
   "description": "Displays the path to the current resource using a hierarchy of links.",
   "dependencies": [],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "components/ui/breadcrumb.tsx",

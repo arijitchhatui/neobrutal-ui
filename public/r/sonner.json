@@ -6,7 +6,9 @@
   "dependencies": [
     "sonner"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "components/ui/sonner.tsx",

@@ -4,7 +4,9 @@
   "type": "registry:ui",
   "description": "An image element with a fallback for representing the user.",
   "dependencies": [],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "components/ui/avatar.tsx",

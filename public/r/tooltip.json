@@ -6,7 +6,9 @@
   "dependencies": [
     "@base-ui/react"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "components/ui/tooltip.tsx",

@@ -7,7 +7,9 @@
     "@base-ui/react",
     "@phosphor-icons/react"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "components/ui/checkbox.tsx",
