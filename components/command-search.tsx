@@ -205,6 +205,13 @@ const searchItems: SearchItem[] = [
         category: "docs",
     },
     {
+        name: "Changelog",
+        description: "All notable changes to NeoBrutal UI.",
+        href: "/docs/changelog",
+        keywords: ["changelog", "releases", "updates", "versions", "history"],
+        category: "docs",
+    },
+    {
         name: "CLI",
         description: "Use the neobrutal CLI to add components.",
         href: "/docs/cli",
