@@ -1,6 +1,6 @@
 {
     "name": "neobrutal",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "CLI for adding NeoBrutal UI components to your project",
     "type": "module",
     "license": "MIT",
@@ -12,7 +12,7 @@
         "type": "git",
         "url": "git+https://github.com/Bridgetamana/neobrutal-ui.git"
     },
-    "homepage": "https://neobrutal-ui-mocha.vercel.app/",
+    "homepage": "https://www.neobrutalui.live/",
     "keywords": [
         "neobrutalism",
         "neobrutalist",

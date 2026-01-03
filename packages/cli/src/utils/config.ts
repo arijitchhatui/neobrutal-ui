@@ -2,7 +2,7 @@ import path from "path"
 import fs from "fs-extra"
 import { z } from "zod"
 
-export const REGISTRY_URL = "https://neobrutal-ui-mocha.vercel.app/r"
+export const REGISTRY_URL = "https://www.neobrutalui.live/r"
 
 export const configSchema = z.object({
     $schema: z.string().optional(),
@@ -102,7 +102,7 @@ export async function getProjectInfo(cwd: string): Promise<ProjectInfo> {
     // Check for Next.js and determine if it's App Router or Pages Router
     if (deps.next) {
         const hasAppDir = await fs.pathExists(path.resolve(cwd, "app")) ||
-                          await fs.pathExists(path.resolve(cwd, "src/app"))
+            await fs.pathExists(path.resolve(cwd, "src/app"))
         return {
             framework: hasAppDir ? "next-app" : "next-pages",
             srcDir,

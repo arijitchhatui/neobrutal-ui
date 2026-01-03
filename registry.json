@@ -1,7 +1,7 @@
 {
     "$schema": "https://ui.shadcn.com/schema/registry.json",
     "name": "neobrutal-ui",
-    "homepage": "https://neobrutal-ui-mocha.vercel.app/",
+    "homepage": "https://www.neobrutalui.live/",
     "items": [
         {
             "name": "utils",
@@ -27,7 +27,9 @@
                 "@base-ui/react",
                 "@phosphor-icons/react"
             ],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/accordion.tsx",
@@ -42,7 +44,9 @@
             "dependencies": [
                 "@phosphor-icons/react"
             ],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/alert.tsx",
@@ -55,7 +59,9 @@
             "type": "registry:ui",
             "description": "An image element with a fallback for representing the user.",
             "dependencies": [],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/avatar.tsx",
@@ -70,7 +76,9 @@
             "dependencies": [
                 "class-variance-authority"
             ],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/badge.tsx",
@@ -83,7 +91,9 @@
             "type": "registry:ui",
             "description": "Displays the path to the current resource using a hierarchy of links.",
             "dependencies": [],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/breadcrumb.tsx",
@@ -98,7 +108,9 @@
             "dependencies": [
                 "class-variance-authority"
             ],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/button.tsx",
@@ -111,7 +123,9 @@
             "type": "registry:ui",
             "description": "Displays a card with header, content, and footer sections.",
             "dependencies": [],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/card.tsx",
@@ -127,7 +141,9 @@
                 "@base-ui/react",
                 "@phosphor-icons/react"
             ],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/checkbox.tsx",
@@ -143,7 +159,9 @@
                 "@base-ui/react",
                 "@phosphor-icons/react"
             ],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/dialog.tsx",
@@ -156,7 +174,9 @@
             "type": "registry:ui",
             "description": "Displays a form input field with neobrutalist styling.",
             "dependencies": [],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/input.tsx",
@@ -171,7 +191,9 @@
             "dependencies": [
                 "class-variance-authority"
             ],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/label.tsx",
@@ -186,7 +208,10 @@
             "dependencies": [
                 "@phosphor-icons/react"
             ],
-            "registryDependencies": ["utils", "button"],
+            "registryDependencies": [
+                "utils",
+                "button"
+            ],
             "files": [
                 {
                     "path": "components/ui/pagination.tsx",
@@ -201,7 +226,9 @@
             "dependencies": [
                 "@base-ui/react"
             ],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/popover.tsx",
@@ -216,7 +243,9 @@
             "dependencies": [
                 "@base-ui/react"
             ],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/progress.tsx",
@@ -232,7 +261,9 @@
                 "@base-ui/react",
                 "@phosphor-icons/react"
             ],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/radio-group.tsx",
@@ -248,7 +279,9 @@
                 "@base-ui/react",
                 "@phosphor-icons/react"
             ],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/select.tsx",
@@ -261,7 +294,9 @@
             "type": "registry:ui",
             "description": "Use to show a placeholder while content is loading.",
             "dependencies": [],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/skeleton.tsx",
@@ -276,7 +311,9 @@
             "dependencies": [
                 "@base-ui/react"
             ],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/slider.tsx",
@@ -291,7 +328,9 @@
             "dependencies": [
                 "sonner"
             ],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/sonner.tsx",
@@ -306,7 +345,9 @@
             "dependencies": [
                 "@base-ui/react"
             ],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/switch.tsx",
@@ -319,7 +360,9 @@
             "type": "registry:ui",
             "description": "A set of layered sections of content displayed one at a time.",
             "dependencies": [],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/tabs.tsx",
@@ -332,7 +375,9 @@
             "type": "registry:ui",
             "description": "Displays a form textarea with neobrutalist styling.",
             "dependencies": [],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/textarea.tsx",
@@ -347,7 +392,9 @@
             "dependencies": [
                 "@base-ui/react"
             ],
-            "registryDependencies": ["utils"],
+            "registryDependencies": [
+                "utils"
+            ],
             "files": [
                 {
                     "path": "components/ui/tooltip.tsx",
