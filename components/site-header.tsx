@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import { CommandSearch } from "@/components/command-search"
 import { ListIcon, XIcon } from "@phosphor-icons/react"
 
 export function SiteHeader() {
@@ -21,6 +22,7 @@ export function SiteHeader() {
                     <Link href="https://github.com/bridgetamana/neobrutal-ui" target="_blank" className="hover:text-black/80  focus-brutal">Github</Link>
                 </nav>
                 <div className="flex items-center gap-4">
+                    <CommandSearch />
                     <Link href="/docs/components/accordion">
                         <Button className="hidden lg:flex font-bold shadow-brutal hover:bg-main">
                             Explore Components
