@@ -226,28 +226,45 @@ async function runAdd(options: z.infer<typeof addOptionsSchema>): Promise<void> 
     }
 }
 
+/**
+ * Strips the alias prefix from a path (e.g., "@/", "~/", "#/").
+ */
+function stripAliasPrefix(aliasPath: string): string {
+    // Common alias prefixes to strip
+    const prefixes = ["@/", "~/", "#/", "$/"]
+    for (const prefix of prefixes) {
+        if (aliasPath.startsWith(prefix)) {
+            return aliasPath.slice(prefix.length)
+        }
+    }
+    return aliasPath
+}
+
 function resolveFilePath(cwd: string, config: Config, filePath: string): string {
     if (filePath.startsWith("components/ui/")) {
         const uiAlias = config.aliases.ui || `${config.aliases.components}/ui`
+        const resolvedPath = stripAliasPrefix(uiAlias)
         return path.resolve(
             cwd,
-            filePath.replace("components/ui/", uiAlias.replace("@/", "") + "/")
+            filePath.replace("components/ui/", resolvedPath + "/")
         )
     }
 
     if (filePath.startsWith("lib/")) {
         const libAlias = config.aliases.lib || "@/lib"
+        const resolvedPath = stripAliasPrefix(libAlias)
         return path.resolve(
             cwd,
-            filePath.replace("lib/", libAlias.replace("@/", "") + "/")
+            filePath.replace("lib/", resolvedPath + "/")
         )
     }
 
     if (filePath.startsWith("hooks/")) {
         const hooksAlias = config.aliases.hooks || "@/hooks"
+        const resolvedPath = stripAliasPrefix(hooksAlias)
         return path.resolve(
             cwd,
-            filePath.replace("hooks/", hooksAlias.replace("@/", "") + "/")
+            filePath.replace("hooks/", resolvedPath + "/")
         )
     }
 
