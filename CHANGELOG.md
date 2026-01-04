@@ -10,7 +10,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Command+K search modal for quick component navigation
-- CHANGELOG.md following Keep a Changelog format
+
+## [0.3.0] - 2026-01-04
+
+### Fixed
+
+- **CLI**: Tailwind v4 compatibility - complete `@theme inline` block with all required CSS variables
+- **CLI**: Added `shadow-brutal` utility class in `@layer utilities` for proper shadow rendering
+- **CLI**: Skip reinstalling dependencies that are already in package.json
+- **CLI**: Skip prompting for utils.ts overwrite when file content is identical
+- **CLI**: Shell security warning on Windows (DEP0190 deprecation)
+- **CLI**: Removed invalid schema URL from components.json
+
+### Changed
+
+- **CLI**: Dependencies are now only installed if not already present in package.json
+- **CLI**: Utils file is silently skipped when adding new components if content matches
 
 ## [0.2.0] - 2026-01-03
 
@@ -80,7 +95,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fs-extra for file operations
 - prism-react-renderer for syntax highlighting
 
-[Unreleased]: https://github.com/bridgetamana/neobrutal-ui/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/bridgetamana/neobrutal-ui/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/bridgetamana/neobrutal-ui/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/bridgetamana/neobrutal-ui/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/bridgetamana/neobrutal-ui/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/bridgetamana/neobrutal-ui/releases/tag/v0.1.0

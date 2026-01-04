@@ -13,6 +13,11 @@ interface PackageManagerConfig {
     lockfile: string
 }
 
+interface PackageJson {
+    dependencies?: Record<string, string>
+    devDependencies?: Record<string, string>
+}
+
 const PACKAGE_MANAGERS: Record<PackageManager, PackageManagerConfig> = {
     pnpm: {
         name: "pnpm",
@@ -68,6 +73,32 @@ export async function detectPackageManager(cwd: string): Promise<PackageManager>
 }
 
 /**
+ * Gets the set of already-installed dependencies from package.json.
+ */
+export async function getInstalledDependencies(cwd: string): Promise<Set<string>> {
+    const packageJsonPath = path.resolve(cwd, "package.json")
+    const installed = new Set<string>()
+
+    try {
+        if (await fs.pathExists(packageJsonPath)) {
+            const content = await fs.readFile(packageJsonPath, "utf-8")
+            const pkg: PackageJson = JSON.parse(content)
+
+            if (pkg.dependencies) {
+                Object.keys(pkg.dependencies).forEach((dep) => installed.add(dep))
+            }
+            if (pkg.devDependencies) {
+                Object.keys(pkg.devDependencies).forEach((dep) => installed.add(dep))
+            }
+        }
+    } catch {
+        // If we can't read package.json, assume nothing is installed
+    }
+
+    return installed
+}
+
+/**
  * Gets the install command for a list of dependencies.
  */
 export function getInstallCommand(
@@ -109,10 +140,12 @@ export async function installDependencies(
     }
 
     return new Promise((resolve) => {
+        // Use shell: true on Windows for proper command resolution
+        const isWindows = process.platform === "win32"
         const child = spawn(config.installCommand, args, {
             cwd,
             stdio: silent ? "ignore" : "inherit",
-            shell: true,
+            shell: isWindows,
         })
 
         child.on("close", (code) => {
