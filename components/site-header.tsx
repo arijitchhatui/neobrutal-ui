@@ -15,7 +15,7 @@ export function SiteHeader() {
             <div className="container mx-auto flex h-14 lg:h-16 items-center justify-between px-4 lg:px-0">
                 <div className="flex items-center gap-1">
                     <Image src="/neobrutalui-logo.svg" alt="NeoBrutal UI Logo" width={24} height={24} />
-                    <span className="text-lg md:text-xl font-bold italic">NeoBrutal UI</span>
+                    <span className="text-lg md:text-xl font-bold">NeoBrutal UI</span>
                 </div>
                 <nav className="hidden lg:flex items-center gap-6 font-medium">
                     <Link href="/docs" className="hover:text-black/80  focus-brutal">Docs</Link>

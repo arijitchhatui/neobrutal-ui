@@ -97,7 +97,7 @@ export default function DocsLayout({
                 <div className="flex h-16 items-center border-b-2 border-black px-6 bg-main">
                     <Link href="/" className="flex items-center gap-1">
                         <Image src="/neobrutalui-logo.svg" alt="NeoBrutal UI Logo" width={24} height={24} />
-                        <span className="text-lg md:text-xl font-bold italic">NeoBrutal UI</span>
+                        <span className="text-lg md:text-xl font-bold">NeoBrutal UI</span>
                     </Link>
                 </div>
                 <div className="h-[calc(100vh-4rem)]">

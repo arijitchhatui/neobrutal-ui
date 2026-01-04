@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Link from "next/link"
-import { ArrowRightIcon, GithubLogoIcon, ChatCircleIcon, HeartIcon } from "@phosphor-icons/react/dist/ssr"
+import { ArrowRightIcon } from "@phosphor-icons/react/dist/ssr"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -121,20 +121,17 @@ export default function DocsPage() {
             <section className="space-y-4">
                 <h2 className="text-2xl font-bold text-black">Get Involved</h2>
                 <ul className="space-y-3 text-base">
-                    <li className="flex items-center gap-3">
-                        <GithubLogoIcon className="h-5 w-5 text-black" weight="bold" />
+                    <li>
                         <Link href="https://github.com/bridgetamana/neobrutal-ui" target="_blank" className="font-bold text-black underline underline-offset-4">
                             Star the repository on GitHub
                         </Link>
                     </li>
-                    <li className="flex items-center gap-3">
-                        <ChatCircleIcon className="h-5 w-5 text-black" weight="bold" />
+                    <li>
                         <Link href="https://github.com/bridgetamana/neobrutal-ui/issues" target="_blank" className="font-bold text-black underline underline-offset-4">
                             Report bugs or request features
                         </Link>
                     </li>
-                    <li className="flex items-center gap-3">
-                        <HeartIcon className="h-5 w-5 text-black" weight="bold" />
+                    <li>
                         <Link href="https://github.com/bridgetamana/neobrutal-ui/blob/main/CONTRIBUTING.md" target="_blank" className="font-bold text-black underline underline-offset-4">
                             Contribute to the project
                         </Link>
@@ -142,16 +139,11 @@ export default function DocsPage() {
                 </ul>
             </section>
 
-            <div className="flex gap-4 pt-4">
-                <Link href="/docs/installation">
-                    <Button className="gap-2">
-                        Get Started <ArrowRightIcon className="h-4 w-4" weight="bold" />
-                    </Button>
-                </Link>
-                <Link href="https://github.com/bridgetamana/neobrutal-ui" target="_blank">
-                    <Button variant="neutral">View on GitHub</Button>
-                </Link>
-            </div>
+            <Link href="/docs/installation">
+                <Button className="gap-2">
+                    Get Started <ArrowRightIcon className="h-4 w-4" weight="bold" />
+                </Button>
+            </Link>
         </div>
     )
 }
