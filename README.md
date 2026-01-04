@@ -1,14 +1,14 @@
+> Still a work in progress
+
 [![npm version](https://img.shields.io/npm/v/neobrutal?style=flat-square)](https://www.npmjs.com/package/neobrutal)
 [![License](https://img.shields.io/github/license/Bridgetamana/neobrutal-ui?style=flat-square)](https://github.com/Bridgetamana/neobrutal-ui/blob/main/license.md)
 [![Contributors](https://img.shields.io/github/contributors/Bridgetamana/neobrutal-ui?style=flat-square)](https://github.com/Bridgetamana/neobrutal-ui/graphs/contributors)
 
-> Still a work in progress
-
 # NeoBrutal UI
 
+![NeoBrutal UI Components Preview](public/neobrutal-preview.png)
 
 A collection of Neobrutalist components built with Base UI and Tailwind CSS.
-
 
 ## Documentation
 
@@ -17,6 +17,7 @@ A collection of Neobrutalist components built with Base UI and Tailwind CSS.
 ## Quick Start
 
 Initialize your project and add components:
+
 ```bash
 npx neobrutal init
 npx neobrutal add button card dialog
