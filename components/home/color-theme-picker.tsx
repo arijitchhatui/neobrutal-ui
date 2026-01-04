@@ -1,11 +1,11 @@
 "use client"
 
-import * as React from "react"
 import { PaletteIcon } from "@phosphor-icons/react"
 import { useTheme, type ColorTheme } from "@/components/theme-provider"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { useState } from "react"
 
 function ColorSwatch({ color, className }: { color: string; className?: string }) {
     return (
@@ -18,7 +18,7 @@ function ColorSwatch({ color, className }: { color: string; className?: string }
 
 function ColorThemePicker() {
     const { currentTheme, setTheme, themes } = useTheme()
-    const [isOpen, setIsOpen] = React.useState(false)
+    const [isOpen, setIsOpen] = useState(false)
 
     function onSelectTheme(theme: ColorTheme) {
         setTheme(theme)

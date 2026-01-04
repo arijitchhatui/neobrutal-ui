@@ -1,16 +1,11 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 
 export function SiteFooter() {
     return (
         <footer className="bg-white py-10">
             <div className="container mx-auto px-4 md:px-0 flex flex-col md:flex-row justify-between items-center gap-4">
-                <div className="flex items-center gap-1">
-                    <Image src="/neobrutalui-logo.svg" alt="Neobrutal UI Logo" width={24} height={24} />
-                    <span className="text-lg md:text-xl font-bold">Neobrutal UI</span>
-                </div>
                 <p className="text-sm font-medium">
                     © {new Date().getFullYear()} <Link href="https://x.com/bridget_amana" target="_blank" className="underline decoration-2 underline-offset-2 hover:bg-main">Bridget Amana</Link>. MIT License.
                 </p>
