@@ -61,10 +61,10 @@ export function HeroSection() {
                     </CardContent>
                 </Card>
                 <div className="flex gap-2">
-                    <Button size="icon" className="rounded-full w-12 h-12 border-2 shadow-brutal bg-pastel-yellow text-black hover:translate-y-1 hover:shadow-none">
+                    <Button size="icon" aria-label="Like" className="rounded-full w-12 h-12 border-2 shadow-brutal bg-pastel-yellow text-black hover:translate-y-1 hover:shadow-none">
                         <HeartIcon weight="fill" className="w-6 h-6" />
                     </Button>
-                    <Button size="icon" className="rounded-full w-12 h-12 border-2 shadow-brutal bg-pastel-blue text-black hover:translate-y-1 hover:shadow-none">
+                    <Button size="icon" aria-label="Share" className="rounded-full w-12 h-12 border-2 shadow-brutal bg-pastel-blue text-black hover:translate-y-1 hover:shadow-none">
                         <ShareNetworkIcon weight="bold" className="w-6 h-6" />
                     </Button>
                 </div>
@@ -78,7 +78,7 @@ export function HeroSection() {
                         <div className="text-xs font-medium text-gray-500">@janedoe</div>
                     </div>
                 </div>
-                <Switch className="data-[state=checked]:bg-black" />
+                <Switch aria-label="Toggle setting" className="data-[state=checked]:bg-black" />
                 <Input placeholder="Enter your email..." />
                 <div className="flex gap-2">
                     <Badge variant="default" className="bg-pastel-red text-black border-2 border-black">New</Badge>

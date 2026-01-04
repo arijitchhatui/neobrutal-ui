@@ -23,7 +23,7 @@ export function SiteHeader() {
                 </nav>
                 <div className="flex items-center gap-4">
                     <CommandSearch />
-                    <Link href="/docs/components/accordion">
+                    <Link href="/docs/components/accordion" aria-label="Explore Components">
                         <Button className="hidden lg:flex font-bold shadow-brutal hover:bg-main">
                             Explore Components
                         </Button>
