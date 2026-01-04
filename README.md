@@ -1,4 +1,8 @@
 > Still a work in progress
+[![npm version](https://img.shields.io/npm/v/neo-brutal-ui?style=flat-square)](https://www.npmjs.com/package/neo-brutal-ui)
+[![License](https://img.shields.io/github/license/Bridgetamana/neobrutal-ui?style=flat-square)](https://github.com/Bridgetamana/neobrutal-ui/blob/main/LICENSE)
+[![Contributors](https://img.shields.io/github/contributors/Bridgetamana/neobrutal-ui?style=flat-square)](https://github.com/Bridgetamana/neobrutal-ui/graphs/contributors)
+
 # NeoBrutal UI
 
 A collection of Neobrutalist components built with Base UI and Tailwind CSS.
