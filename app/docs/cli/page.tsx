@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { CodeBlock } from "@/components/docs/code-block"
 
 export default function CLIPage() {
@@ -153,6 +154,19 @@ npx neobrutal diff button`} language="bash" />
                             </tr>
                         </tbody>
                     </table>
+                </div>
+            </section>
+
+            <section className="border-2 border-black bg-bw">
+                <div className="grid grid-cols-1 sm:grid-cols-2 divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-black">
+                    <Link href="/docs/installation" className="block p-3 hover:bg-main">
+                        <span className="text-lg font-bold">Installation</span>
+                        <p className="truncate">Learn how to install Neobrutal UI components</p>
+                    </Link>
+                    <Link href="/docs/theming" className="block p-3 hover:bg-main text-right">
+                        <span className="text-lg font-bold">Theming</span>
+                        <p className="truncate">Customize the look and feel of Neobrutal UI components</p>
+                    </Link>
                 </div>
             </section>
         </div>

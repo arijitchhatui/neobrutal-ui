@@ -139,11 +139,12 @@ export default function DocsPage() {
                 </ul>
             </section>
 
-            <Link href="/docs/installation">
-                <Button className="gap-2">
-                    Get Started <ArrowRightIcon className="h-4 w-4" weight="bold" />
-                </Button>
-            </Link>
+            <section className="border-2 border-black bg-bw">
+                <Link href="/docs/installation" className="block p-3 hover:bg-main text-right">
+                    <span className="text-lg font-bold">Installation</span>
+                    <p className="truncate">Learn how to install Neobrutal UI components</p>
+                </Link>
+            </section>
         </div>
     )
 }
