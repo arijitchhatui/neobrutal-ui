@@ -41,20 +41,20 @@ export const metadata: Metadata = {
     title: "Neobrutal UI",
     description: "A collection of Neobrutalism-styled components built with Base UI and Tailwind CSS.",
     siteName: "Neobrutal UI",
-    // images: [
-    //   {
-    //     url: "/og-image.png",
-    //     width: 1200,
-    //     height: 630,
-    //     alt: "Neobrutal UI",
-    //   },
-    // ],
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Neobrutal UI",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Neobrutal UI",
     description: "A collection of Neobrutalism-styled components built with Base UI and Tailwind CSS.",
-    // images: ["/og-image.png"],
+    images: ["/opengraph-image.png"],
     creator: "@bridgetamana",
   },
   robots: {
