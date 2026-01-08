@@ -10,14 +10,14 @@ const usageCode = `import { Avatar, AvatarImage, AvatarFallback } from "@/compon
 export function AvatarDemo() {
   return (
     <Avatar>
-      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+      <AvatarImage src="https://github.com/bridgetamana.png" alt="@bridgetamana" />
       <AvatarFallback>CN</AvatarFallback>
     </Avatar>
   )
 }`
 
 const htmlCode = `<div class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full border-2 border-black bg-white">
-  <img src="https://github.com/shadcn.png" alt="@shadcn" class="aspect-square h-full w-full object-cover" />
+  <img src="https://github.com/bridgetamana.png" alt="@bridgetamana" class="aspect-square h-full w-full object-cover" />
 </div>
 
 <!-- Fallback (when image fails or is missing) -->
@@ -51,7 +51,7 @@ export default function AvatarPage() {
 
             <ComponentPreview code={usageCode} htmlCode={htmlCode}>
                 <Avatar>
-                    <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                    <AvatarImage src="https://github.com/bridgetamana.png" alt="@bridgetamana" />
                     <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
             </ComponentPreview>
@@ -65,7 +65,7 @@ export default function AvatarPage() {
                 <h2 className="text-xl font-bold">Usage</h2>
                 <CodeBlock code={`import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"`} />
                 <CodeBlock code={`<Avatar>
-  <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+  <AvatarImage src="https://github.com/bridgetamana.png" alt="@bridgetamana" />
   <AvatarFallback>CN</AvatarFallback>
 </Avatar>`} />
             </div>
@@ -76,11 +76,11 @@ export default function AvatarPage() {
                 <div className="space-y-4">
                     <h3 className="font-bold">With Image</h3>
                     <ComponentPreview code={`<Avatar>
-  <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+  <AvatarImage src="https://github.com/bridgetamana.png" alt="@bridgetamana" />
   <AvatarFallback>CN</AvatarFallback>
 </Avatar>`}>
                         <Avatar>
-                            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                            <AvatarImage src="https://github.com/bridgetamana.png" alt="@bridgetamana" />
                             <AvatarFallback>CN</AvatarFallback>
                         </Avatar>
                     </ComponentPreview>

@@ -8,6 +8,9 @@ import { Input } from "@/components/ui/input"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Switch } from "@/components/ui/switch"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Checkbox } from "@/components/ui/checkbox"
+import { Slider } from "@/components/ui/slider"
+import { Label } from "@/components/ui/label"
 import {
     ArrowRightIcon,
     WarningIcon,
@@ -20,10 +23,10 @@ import { cn } from "@/lib/utils"
 const Marquee = ({ className, children }: { className?: string, children: React.ReactNode }) => {
     return (
         <div className={cn("flex overflow-hidden select-none", className)}>
-            <div className={cn("flex min-w-full shrink-0 gap-4 items-center animate-marquee pr-4")}>
+            <div className={cn("flex min-w-full shrink-0 gap-3 items-center animate-marquee pr-3")}>
                 {children}
             </div>
-            <div className={cn("flex min-w-full shrink-0 gap-4 items-center animate-marquee pr-4")}>
+            <div className={cn("flex min-w-full shrink-0 gap-3 items-center animate-marquee pr-3")}>
                 {children}
             </div>
         </div>
@@ -48,7 +51,7 @@ export function HeroSection() {
                 </Link>
             </div>
             <Marquee>
-                <Card className="w-44 shrink-0 bg-pastel-green border-2 border-black shadow-brutal">
+                <Card className="w-44 shrink-0 bg-pastel-green">
                     <CardHeader className="pb-2">
                         <div className="flex justify-between items-center">
                             <CardTitle className="text-sm uppercase">Revenue</CardTitle>
@@ -61,29 +64,31 @@ export function HeroSection() {
                     </CardContent>
                 </Card>
                 <div className="flex gap-2">
-                    <Button size="icon" aria-label="Like" className="rounded-full w-12 h-12 border-2 shadow-brutal bg-pastel-yellow text-black hover:translate-y-1 hover:shadow-none">
+                    <Button size="icon" aria-label="Like" className="rounded-full w-12 h-12 bg-pastel-yellow">
                         <HeartIcon weight="fill" className="w-6 h-6" />
                     </Button>
-                    <Button size="icon" aria-label="Share" className="rounded-full w-12 h-12 border-2 shadow-brutal bg-pastel-blue text-black hover:translate-y-1 hover:shadow-none">
+                    <Button size="icon" aria-label="Share" className="rounded-full w-12 h-12 bg-pastel-blue">
                         <ShareNetworkIcon weight="bold" className="w-6 h-6" />
                     </Button>
                 </div>
                 <div className="flex items-center gap-4 p-4 bg-white border-2 border-black shadow-brutal rounded-base min-w-[250px]">
                     <Avatar className="w-12 h-12 border-2 border-black">
-                        <AvatarImage src="https://github.com/shadcn.png" />
-                        <AvatarFallback>UI</AvatarFallback>
+                        <AvatarImage src="https://github.com/bridgetamana.png" />
+                        <AvatarFallback>BA</AvatarFallback>
                     </Avatar>
                     <div>
-                        <div className="font-bold">Jane Doe</div>
-                        <div className="text-xs font-medium text-gray-500">@janedoe</div>
+                        <div className="font-bold">Bridget Amana</div>
+                        <div className="text-xs font-medium text-black/60">@bridgetamana</div>
                     </div>
                 </div>
                 <Switch aria-label="Toggle setting" className="data-[state=checked]:bg-black" />
                 <Input placeholder="Enter your email..." />
-                <div className="flex gap-2">
-                    <Badge variant="default" className="bg-pastel-red text-black border-2 border-black">New</Badge>
-                    <Badge variant="outline" className="bg-white text-black border-2 border-black rounded-4xl">Featured</Badge>
+                <Badge variant="default" className="bg-pastel-red">New</Badge>
+                <div className="flex items-center gap-2 p-3 bg-white border-2 border-black shadow-brutal rounded-base">
+                    <Checkbox id="demo" defaultChecked />
+                    <Label htmlFor="demo">Subscribe</Label>
                 </div>
+                <Slider defaultValue={[50]} max={100} />
                 <Alert className="w-full bg-pastel-red border-2 border-black shadow-brutal">
                     <WarningIcon className="h-5 w-5" />
                     <AlertTitle className="font-bold">Heads up!</AlertTitle>
