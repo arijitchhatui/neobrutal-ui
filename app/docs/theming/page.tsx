@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { CodeBlock } from "@/components/docs/code-block"
 
 export default function ThemingPage() {
@@ -161,6 +162,19 @@ export default function ThemingPage() {
                             Use 2px minimum. Thin lines break the brutalist look.
                         </p>
                     </div>
+                </div>
+            </section>
+
+            <section className="border-2 border-black bg-bw">
+                <div className="grid grid-cols-1 sm:grid-cols-2 divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-black">
+                    <Link href="/docs/cli" className="block p-3 hover:bg-main">
+                        <span className="text-lg font-bold">CLI Reference</span>
+                        <p className="truncate">All available commands and options</p>
+                    </Link>
+                    <Link href="/docs/accessibility" className="block p-3 hover:bg-main text-right">
+                        <span className="text-lg font-bold">Accessibility</span>
+                        <p className="truncate">Learn about how neobrutal ui is built with accessibility in mind</p>
+                    </Link>
                 </div>
             </section>
         </div>

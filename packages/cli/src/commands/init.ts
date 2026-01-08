@@ -96,10 +96,7 @@ export async function runInit(
 
     await createUtilsFile(cwd, config as Config)
 
-    await writeConfig(cwd, {
-        $schema: "https://neobrutalism.dev/schema.json",
-        ...config,
-    } as Config)
+    await writeConfig(cwd, config as Config)
 
     initSpinner.succeed("Project initialized successfully.")
 
@@ -281,22 +278,35 @@ export function cn(...inputs: ClassValue[]) {
 
 /**
  * Neobrutalism CSS variables for the design system.
+ * Includes @theme inline block for Tailwind v4 compatibility.
  */
 const NEOBRUTAL_CSS_VARIABLES = `
-/* NeoBrutal UI - Design Tokens */
+/* Neobrutal UI - Tailwind v4 Theme */
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--black);
+  --color-main: var(--main);
+  --color-bg: var(--bg);
+  --color-bw: var(--white);
+  --color-text: var(--black);
+  --color-border: var(--black);
+  --color-ring: var(--black);
+  --shadow-brutal: 4px 4px 0px 0px var(--black);
+  --radius-base: var(--radius);
+}
+
 :root {
-  /* Primary accent color (purple) */
+  --white: #ffffff;
+  --black: #000000;
   --main: #b6ace4;
-  /* Background color */
   --bg: #f0eefc;
-  /* Border width for brutal elements */
-  --bw: 2px;
-  /* Border color */
-  --border: #000000;
-  /* Hard shadow for neobrutalism */
-  --shadow-brutal: 4px 4px 0 var(--border);
-  /* Base border radius */
-  --radius-base: 8px;
+  --radius: 5px;
+}
+
+@layer utilities {
+  .shadow-brutal {
+    box-shadow: var(--shadow-brutal);
+  }
 }
 `
 

@@ -1,9 +1,10 @@
 import fs from "fs"
 import path from "path"
+import Link from "next/link"
 
 export const metadata = {
-    title: "Changelog - NeoBrutal UI",
-    description: "All notable changes to NeoBrutal UI.",
+    title: "Changelog - Neobrutal UI",
+    description: "All notable changes to Neobrutal UI.",
 }
 
 async function getChangelog() {
@@ -18,7 +19,7 @@ async function getChangelog() {
 
 function parseChangelog(content: string) {
     if (!content) return []
-    
+
     // Normalize line endings (Windows \r\n to Unix \n)
     const normalizedContent = content.replace(/\r\n/g, "\n").replace(/\r/g, "\n")
     const lines = normalizedContent.split("\n")
@@ -108,7 +109,7 @@ export default async function ChangelogPage() {
             <div>
                 <h1 className="text-3xl font-bold mb-2">Changelog</h1>
                 <p className="text-black/70">
-                    All notable changes to NeoBrutal UI are documented here.
+                    All notable changes to Neobrutal UI are documented here.
                 </p>
             </div>
 
@@ -205,6 +206,13 @@ export default async function ChangelogPage() {
                     .
                 </p>
             </div>
+
+            <section className="border-2 border-black bg-bw">
+                <Link href="/docs/accessibility" className="block p-3 hover:bg-main">
+                    <span className="text-lg font-bold">Accessibility</span>
+                    <p className="truncate">Learn about how neobrutal ui is built with accessibility in mind</p>
+                </Link>
+            </section>
         </div>
     )
 }

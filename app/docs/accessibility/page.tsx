@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { CodeBlock } from "@/components/docs/code-block"
 
 export default function AccessibilityPage() {
@@ -11,7 +12,7 @@ export default function AccessibilityPage() {
 
             <section className="space-y-4">
                 <p className="text-base text-black">
-                    NeoBrutal UI is built with accessibility as a core principle. All interactive components are designed to meet WCAG 2.1 AA standards while maintaining the bold Neobrutalist aesthetic.
+                    Neobrutal UI is built with accessibility as a core principle. All interactive components are designed to meet WCAG 2.1 AA standards while maintaining the bold Neobrutalist aesthetic.
                 </p>
             </section>
 
@@ -121,6 +122,19 @@ export default function AccessibilityPage() {
                             Uses <code className="bg-gray-100 px-1 rounded">role=&quot;combobox&quot;</code> with proper <code className="bg-gray-100 px-1 rounded">aria-expanded</code> and option selection announcements.
                         </p>
                     </div>
+                </div>
+            </section>
+
+            <section className="border-2 border-black bg-bw">
+                <div className="grid grid-cols-1 sm:grid-cols-2 divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-black">
+                    <Link href="/docs/theming" className="block p-3 hover:bg-main">
+                        <span className="text-lg font-bold">Theming</span>
+                        <p className="truncate">Customize the look and feel of Neobrutal UI components</p>
+                    </Link>
+                    <Link href="/docs/changelog" className="block p-3 hover:bg-main text-right">
+                        <span className="text-lg font-bold">Changelog</span>
+                        <p className="truncate">See what&apos;s new in each release</p>
+                    </Link>
                 </div>
             </section>
         </div>

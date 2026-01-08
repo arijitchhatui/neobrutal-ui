@@ -1,6 +1,6 @@
-# neobrutal
+# neobrutal-ui
 
-CLI for adding NeoBrutal UI components to your project.
+CLI for adding Neobrutal UI components to your project.
 
 ## Usage
 
@@ -11,6 +11,7 @@ npx neobrutal init
 ```
 
 This will:
+
 - Create a `components.json` configuration file
 - Set up the `cn` utility function
 - Create the required directory structure
@@ -38,7 +39,7 @@ npx neobrutal diff button
 ## Commands
 
 | Command | Description |
-|---------|-------------|
+| --------- | ------------- |
 | `init` | Initialize your project and install dependencies |
 | `add [components...]` | Add components to your project |
 | `list` | List all available components |
@@ -49,7 +50,7 @@ npx neobrutal diff button
 ### Global Options
 
 | Option | Description |
-|--------|-------------|
+| -------- | ------------- |
 | `-c, --cwd <cwd>` | The working directory (defaults to current directory) |
 | `-h, --help` | Display help for command |
 | `-v, --version` | Display the version number |
@@ -57,7 +58,7 @@ npx neobrutal diff button
 ### Add Options
 
 | Option | Description |
-|--------|-------------|
+| -------- | ------------- |
 | `-y, --yes` | Skip confirmation prompt |
 | `-o, --overwrite` | Overwrite existing files |
 | `-a, --all` | Add all available components |
@@ -65,7 +66,7 @@ npx neobrutal diff button
 ### Init Options
 
 | Option | Description |
-|--------|-------------|
+| --------- | ------------- |
 | `-y, --yes` | Skip confirmation prompt |
 | `-f, --force` | Force overwrite of existing configuration |
 

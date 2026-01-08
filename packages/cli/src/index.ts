@@ -15,7 +15,7 @@ process.on("SIGTERM", () => process.exit(0))
 async function main() {
     const program = new Command()
         .name("neobrutal")
-        .description("Add NeoBrutal UI components to your project")
+        .description("Add Neobrutal UI components to your project")
         .version(
             packageJson.version,
             "-v, --version",

@@ -5,7 +5,8 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { useState } from "react"
 import { ListIcon, XIcon } from "@phosphor-icons/react"
-import Image from "next/image"
+import { Logo } from "@/components/logo"
+import { ColorThemePicker } from "@/components/home/color-theme-picker"
 
 const sidebarItems = [
     {
@@ -95,9 +96,8 @@ export default function DocsLayout({
         <div className="flex min-h-screen flex-col md:flex-row bg-bg">
             <aside className="fixed top-0 left-0 z-30 hidden h-screen w-64 border-r-2 border-black bg-white md:block">
                 <div className="flex h-16 items-center border-b-2 border-black px-6 bg-main">
-                    <Link href="/" className="flex items-center gap-1">
-                        <Image src="/neobrutalui-logo.svg" alt="NeoBrutal UI Logo" width={24} height={24} />
-                        <span className="text-lg md:text-xl font-bold italic">NeoBrutal UI</span>
+                    <Link href="/">
+                        <Logo />
                     </Link>
                 </div>
                 <div className="h-[calc(100vh-4rem)]">
@@ -106,11 +106,8 @@ export default function DocsLayout({
             </aside>
 
             <div className="sticky top-0 z-40 flex h-16 items-center justify-between border-b-2 border-black bg-main px-6 md:hidden">
-                <Link href="/" className="text-xl font-bold italic">
-                    <div className="flex items-center gap-1">
-                        <Image src="/neobrutalui-logo.svg" alt="NeoBrutal UI Logo" width={24} height={24} />
-                        <span className="text-lg md:text-xl font-bold italic">NeoBrutal UI</span>
-                    </div>
+                <Link href="/">
+                    <Logo />
                 </Link>
                 <button
                     onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -139,6 +136,7 @@ export default function DocsLayout({
                     {children}
                 </div>
             </main>
+            <ColorThemePicker />
         </div>
     )
 }

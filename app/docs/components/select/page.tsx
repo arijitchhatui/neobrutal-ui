@@ -1,8 +1,6 @@
 "use client"
 
-import * as React from "react"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Label } from "@/components/ui/label"
 import { ComponentPreview } from "@/components/docs/component-preview"
 import { CodeBlock } from "@/components/docs/code-block"
 import { PropsTable } from "@/components/docs/props-table"
@@ -79,7 +77,7 @@ export default function SelectPage() {
 
             <div className="space-y-4">
                 <h2 className="text-xl font-bold">Installation</h2>
-                <CodeBlock code="npx neobrutal-ui add select" language="bash" />
+                <CodeBlock code="npx neobrutal add select" language="bash" />
             </div>
 
             <div className="space-y-4">

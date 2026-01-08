@@ -16,6 +16,7 @@ import {
     detectPackageManager,
     installDependencies,
     getInstallCommand,
+    getInstalledDependencies,
 } from "../utils/package-manager.js"
 import { transformImports } from "../utils/transform.js"
 import { runInit } from "./init.js"
@@ -156,6 +157,19 @@ async function runAdd(options: z.infer<typeof addOptionsSchema>): Promise<void> 
                 const targetPath = resolveFilePath(cwd, config, file.path)
 
                 if (await fs.pathExists(targetPath)) {
+                    // For utils file, check if content is identical - skip silently if so
+                    if (file.path === "lib/utils.ts") {
+                        const existingContent = await fs.readFile(targetPath, "utf-8")
+                        const transformedContent = transformImports(file.content, config)
+                        // Normalize line endings for comparison
+                        const normalizedExisting = existingContent.replace(/\r\n/g, "\n").trim()
+                        const normalizedNew = transformedContent.replace(/\r\n/g, "\n").trim()
+                        if (normalizedExisting === normalizedNew) {
+                            // Skip silently - file is identical
+                            continue
+                        }
+                    }
+
                     if (!overwrite) {
                         const { shouldOverwrite } = await prompts({
                             type: "confirm",
@@ -190,27 +204,33 @@ async function runAdd(options: z.infer<typeof addOptionsSchema>): Promise<void> 
 
         writeSpinner.succeed(`Wrote ${filesToWrite.length} file(s).`)
 
-        // Auto-install npm dependencies
+        // Auto-install npm dependencies (only those not already installed)
         if (npmDependencies.size > 0) {
-            const depsArray = Array.from(npmDependencies)
-            const packageManager = await detectPackageManager(cwd)
+            const installedDeps = await getInstalledDependencies(cwd)
+            const depsToInstall = Array.from(npmDependencies).filter(
+                (dep) => !installedDeps.has(dep)
+            )
 
-            logger.break()
-            logger.info(`Installing ${depsArray.length} dependencies...`)
+            if (depsToInstall.length > 0) {
+                const packageManager = await detectPackageManager(cwd)
 
-            const installSpinner = spinner(
-                `Running ${getInstallCommand(packageManager, depsArray)}`
-            ).start()
-
-            const success = await installDependencies(cwd, depsArray, { silent: true })
-
-            if (success) {
-                installSpinner.succeed("Dependencies installed.")
-            } else {
-                installSpinner.fail("Failed to install dependencies.")
                 logger.break()
-                logger.warn("Please install manually:")
-                logger.log(`  ${getInstallCommand(packageManager, depsArray)}`)
+                logger.info(`Installing ${depsToInstall.length} dependencies...`)
+
+                const installSpinner = spinner(
+                    `Running ${getInstallCommand(packageManager, depsToInstall)}`
+                ).start()
+
+                const success = await installDependencies(cwd, depsToInstall, { silent: true })
+
+                if (success) {
+                    installSpinner.succeed("Dependencies installed.")
+                } else {
+                    installSpinner.fail("Failed to install dependencies.")
+                    logger.break()
+                    logger.warn("Please install manually:")
+                    logger.log(`  ${getInstallCommand(packageManager, depsToInstall)}`)
+                }
             }
         }
 

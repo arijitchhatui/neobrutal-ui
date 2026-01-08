@@ -1,10 +1,8 @@
 "use client"
 
-import * as React from "react"
 import { Skeleton } from "@/components/ui/skeleton"
 import { ComponentPreview } from "@/components/docs/component-preview"
 import { CodeBlock } from "@/components/docs/code-block"
-import { PropsTable } from "@/components/docs/props-table"
 
 const usageCode = `<div className="flex items-center gap-4">
   <Skeleton className="h-12 w-12 rounded-full" />
@@ -39,7 +37,7 @@ export default function SkeletonPage() {
 
             <div className="space-y-4">
                 <h2 className="text-xl font-bold">Installation</h2>
-                <CodeBlock code="npx neobrutal-ui add skeleton" language="bash" />
+                <CodeBlock code="npx neobrutal add skeleton" language="bash" />
             </div>
 
             <div className="space-y-4">
