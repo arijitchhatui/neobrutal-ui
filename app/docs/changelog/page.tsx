@@ -1,5 +1,6 @@
 import fs from "fs"
 import path from "path"
+import Link from "next/link"
 
 export const metadata = {
     title: "Changelog - Neobrutal UI",
@@ -205,6 +206,13 @@ export default async function ChangelogPage() {
                     .
                 </p>
             </div>
+
+            <section className="border-2 border-black bg-bw">
+                <Link href="/docs/accessibility" className="block p-3 hover:bg-main">
+                    <span className="text-lg font-bold">Accessibility</span>
+                    <p className="truncate">Learn about how neobrutal ui is built with accessibility in mind</p>
+                </Link>
+            </section>
         </div>
     )
 }
