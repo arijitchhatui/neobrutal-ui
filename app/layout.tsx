@@ -17,7 +17,8 @@ export const metadata: Metadata = {
     default: "Neobrutal UI - A Neobrutalism-styled Component Library",
     template: "%s | Neobrutal UI",
   },
-  description: "A collection of Neobrutalism-styled components built with Base UI and Tailwind CSS.",
+  description:
+    "A collection of Neobrutalism-styled components built with Base UI and Tailwind CSS.",
   keywords: [
     "neobrutalism",
     "neobrutalism ui",
@@ -39,7 +40,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.neobrutalui.live",
     title: "Neobrutal UI",
-    description: "A collection of Neobrutalism-styled components built with Base UI and Tailwind CSS.",
+    description:
+      "A collection of Neobrutalism-styled components built with Base UI and Tailwind CSS.",
     siteName: "Neobrutal UI",
     images: [
       {
@@ -53,7 +55,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Neobrutal UI",
-    description: "A collection of Neobrutalism-styled components built with Base UI and Tailwind CSS.",
+    description:
+      "A collection of Neobrutalism-styled components built with Base UI and Tailwind CSS.",
     images: ["/opengraph-image.png"],
     creator: "@bridgetamana",
   },
@@ -63,21 +66,15 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
-    verification: {
-      google: "BC_qnItrS5-84LtlJa_v3jwV0OpYALV72O-SV6Rq1zg",
-    },
-  };
-
-  return metadata;
-}
+  },
+  verification: {
+    google: "BC_qnItrS5-84LtlJa_v3jwV0OpYALV72O-SV6Rq1zg",
+  },
+};
 
 export default function RootLayout({
   children,
