@@ -74,15 +74,6 @@ export default function CLIPage() {
                         </tbody>
                     </table>
                 </div>
-
-                <CodeBlock code={`# Add a single component
-npx neobrutal add button
-
-# Add multiple components
-npx neobrutal add button card dialog
-
-# Add all components
-npx neobrutal add --all`} language="bash" />
             </section>
 
             <section className="space-y-4">
@@ -99,12 +90,6 @@ npx neobrutal add --all`} language="bash" />
                     Compare local components with the registry to check for updates. Useful when you want to see what has changed without overwriting your customizations.
                 </p>
                 <CodeBlock code={`npx neobrutal diff [component]`} language="bash" />
-
-                <CodeBlock code={`# Check all installed components
-npx neobrutal diff
-
-# Check a specific component
-npx neobrutal diff button`} language="bash" />
             </section>
 
             <section className="space-y-4">
@@ -114,7 +99,6 @@ npx neobrutal diff button`} language="bash" />
                 </p>
 
                 <CodeBlock code={`{
-  "$schema": "https://www.neobrutalui.live/schema.json",
   "style": "default",
   "tailwind": {
     "config": "tailwind.config.js",
